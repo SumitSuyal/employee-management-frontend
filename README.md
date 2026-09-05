@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Employee Management Frontend
 
-## Getting Started
+A professional Employee Management System frontend built with **Next.js, React, TypeScript, and Tailwind CSS**.
 
-First, run the development server:
+The application provides a responsive interface for managing employee records through a **Spring Boot REST API**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- View all employees
+- Add new employees
+- Edit existing employees
+- Delete employees
+- Form validation
+- Loading states
+- Error handling
+- Responsive employee table
+- Department badges
+- Salary formatting
+- Employee initials/avatar
+- Reusable React components
+- Custom React hook for employee operations
+- Centralized API service
+- Environment-based API configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Spring Boot**
+- **Spring Data JPA**
+- **MySQL**
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+The frontend follows a component-based architecture with a clear separation of responsibilities:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+page.tsx
+   │
+   ├── DashboardHeader
+   ├── EmployeeForm
+   └── EmployeeTable
+          │
+          ↓
+    useEmployees()
+          │
+          ↓
+  employeeService.ts
+          │
+          ↓
+ Spring Boot REST API
